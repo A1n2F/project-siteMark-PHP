@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Link;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Seeder;
 
 class LinkSeeder extends Seeder
@@ -12,6 +14,10 @@ class LinkSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        User::all()->each(function(User $user) {
+            Link::factory()->count(random_int(5, 8))->create([
+                'user_id' => $user->id
+            ]);
+        });
     }
 }

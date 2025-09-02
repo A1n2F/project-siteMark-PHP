@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Link>
@@ -17,7 +18,10 @@ class LinkFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'link' => fake()->url(),
+            'name' => fake()->word(),
+            'name_plataform' => fake()->word(),
+            'image' => fake()->word()
         ];
     }
 }
