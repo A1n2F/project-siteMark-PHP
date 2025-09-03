@@ -45,6 +45,10 @@
 
         <br>
 
+        <a href="{{ route('dashboard') }}">Cancelar</a>
+
+        <br>
+
         <button>Salvar</button>
     </form>
 </div>
