@@ -5,7 +5,7 @@
         <div>{{ $message }}</div>
     @endif
 
-    <form action="{{ route('links.create') }}" method="post">
+    <form action="{{ route('links.create') }}" method="post" enctype="multipart/form-data">
         @csrf
 
         <div>
