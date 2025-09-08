@@ -42,6 +42,12 @@ class LinkController extends Controller
      */
     public function edit(Link $link)
     {
+        /** @var User $user */
+        $user = auth()->user();
+        dump(
+            $user->can('atualizar', $link)
+        );
+
         return view('links.edit', compact('link'));
     }
 
