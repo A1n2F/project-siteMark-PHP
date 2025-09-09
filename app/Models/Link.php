@@ -4,6 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Http\UploadedFile;
+
+/**
+ * @property-read UploadedFile $photo_link
+ */
+
 
 class Link extends Model
 {
@@ -32,4 +38,5 @@ class Link extends Model
         $this->fill(['sort' => $newOrder])->save();
         $swapWith->fill(['sort' => $order])->save();
     }
+    
 }

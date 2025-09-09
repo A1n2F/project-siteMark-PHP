@@ -21,7 +21,6 @@ class LinkFactory extends Factory
             'link' => fake()->url(),
             'name' => fake()->word(),
             'name_plataform' => fake()->word(),
-            'image' => fake()->word()
         ];
     }
 }

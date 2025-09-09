@@ -35,6 +35,8 @@
                 <span>{{ $link->link }}</span>
                 <span>{{ $link->name_plataform }}</span>
 
+                <img src="/storage/{{ $link->photo_link }}" alt="Link Image" />
+
                 <form action="{{ route('links.destroy', $link) }}" method="post" onsubmit="return confirm('Tem certeza?')">
                     @csrf
                     @method('DELETE')

@@ -36,14 +36,11 @@
         <br>
 
         <div>
-            <input name="image" placeholder="Image" type="file"/>
-            @error('image')
-                <span>{{ $message }}</span>
-            @enderror
+            <input type="file" name="photo_link" />
         </div>
 
         <br>
-
+        
         <a href="{{ route('dashboard') }}">Cancelar</a>
 
         <br>

@@ -2,16 +2,14 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\CheckEmail;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Validation\Rule;
 
-/**
- * @property-read UploadedFile $photo
- */
+/** 
+ * @property-read UploadedFile $photo_link
+*/
 
-class ProfileRequest extends FormRequest
+class EditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,14 +27,10 @@ class ProfileRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'min:3', 'max:30'],
-            'photo' => ['nullable', 'image'],
-            'email' => [
-                'required', 
-                'email',
-                Rule::unique('users')->ignoreModel($this->user())
-            ],
-            'description' => ['nullable'],
+            'link' => ['required', 'url'],
+            'name' => ['required', 'min:3'],
+            'name_plataform' => ['required'],
+            'photo_link' => ['nullable', 'image']
         ];
     }
 }

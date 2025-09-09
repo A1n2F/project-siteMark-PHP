@@ -5,7 +5,7 @@
         <div>{{ $message }}</div>
     @endif
 
-    <form action="{{ route('links.edit', $link) }}" method="post">
+    <form action="{{ route('links.edit', $link) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
 
@@ -36,11 +36,13 @@
 
         <br>
 
+        <!-- <div>
+            <input name="image" type="file"/>
+        </div> -->
+
         <div>
-            <input name="image" placeholder="Image" type="file"/>
-            @error('image')
-                <span>{{ $message }}</span>
-            @enderror
+            <img src="/storage/{{ $link->photo_link  }}" alt="Profile Picture" />
+            <input type="file" name="photo_link" />
         </div>
 
         <br>

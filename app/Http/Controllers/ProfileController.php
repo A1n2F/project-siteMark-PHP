@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProfileRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 
 class ProfileController extends Controller
 {
@@ -23,7 +24,13 @@ class ProfileController extends Controller
         /** @var User $user */
         $user = auth()->user();
 
-        $user->fill($request->validated())->save();
+        $data = $request->validated();
+
+        if($file = $request->photo) {
+            $data['photo'] = $file->store('photos');
+        }
+
+        $user->fill($data)->save();
 
         return back()->with('message', 'Profile atualizado com sucesso!');
     }
