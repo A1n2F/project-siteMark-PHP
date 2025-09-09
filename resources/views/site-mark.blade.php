@@ -1,5 +1,7 @@
+@vite('resources/css/app.css')
+
 <div>
-    <h1>Site Mark</h1>
+    <h1 class="text-red-500">Site Mark</h1>
     <img src="/storage/{{ $user->photo }}" alt="Profile Picture">
     <h2>User {{ $user->name }} :: {{ $user->id }}</h2>
     <h3>{{ $user->description }}</h3>
