@@ -41,6 +41,17 @@
             @enderror
         </div>
 
+        <br>
+
+        <div>
+            <span>sitemark.com.br/</span>
+            <input name="handler" placeholder="@seulink" value="{{ old('handler', $user->handler) }}" />
+            @error('handler')
+                <span>{{ $message }}</span>
+            @enderror
+        </div>
+
+
         <a href="{{ route('dashboard') }}">Cancelar</a>
         
         <br>
